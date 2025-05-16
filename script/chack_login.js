@@ -9,7 +9,7 @@
       window.location.href = '../pages/admin.html'; // توجيه إلى لوحة التحكم
     } else if (username === 'user' && password === 'user') {
       localStorage.setItem('userRole', 'user');
-      window.location.href = '../index.html'; // توجيه إلى الصفحة الرئيسية
+      window.location.href = '../home.html'; // توجيه إلى الصفحة الرئيسية
     } else {
       alert('اسم المستخدم أو كلمة المرور غير صحيحة');
     }
