@@ -1,21 +1,8 @@
-    /* admin.css */
-    @font-face {
-        font-family: 'GE_SS_Two_Medium';
-        src: url('../fonts/GE_SS_Two_Medium.otf.ttf');
-        font-weight: normal;
-        font-style: normal;
-    }
-    
-    *{
-        font-family: 'GE_SS_Two_Medium';
-    }
-    body {
+body {
       font-family: Arial, sans-serif;
       background-color: #f2f6fc;
       margin: 0;
       padding: 0;
-      direction: rtl;
-      text-align: right;
     }
     header {
       background-color: #004080;

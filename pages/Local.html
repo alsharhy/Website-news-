@@ -3,71 +3,71 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>الجزيرة - الرئيسية</title>
-  <link rel="stylesheet" href="styles/style.css" />
+  <title>الجزيرة - محلية</title>
+  <link rel="stylesheet" href="../styles/style.css" />
 </head>
 <body>
   <nav class="navbar">
     <div class="navbar-top">
       <div class="logo-area">
-        <img src="images/logo.svg" alt="الجزيرة" class="site-logo" />
+        <img src="../images/logo.svg" alt="الجزيرة" class="site-logo" />
         <div class="site-name">الجزيرة</div>
       </div>
       <div class="nav-actions">
         <input type="search" class="search-box" placeholder="ابحث هنا..." />
-        <img src="images/account.png" alt="حساب" class="account-icon" onclick="window.location.href='pages/login.html'" />
+        <img src="../images/account.png" alt="حساب" class="account-icon" onclick="window.location.href='login.html'" />
       </div>
     </div>
     <div class="nav-links">
-      <a href="pages/local.html">محلية</a>
-      <a href="pages/economic.html">اقتصادية</a>
-      <a href="pages/sports.html">رياضية</a>
-      <a href="pages/documentary.html">وثائقية</a>
-      <a href="pages/breaking.html">عاجلة</a>
+      <a href="local.html">محلية</a>
+      <a href="economic.html">اقتصادية</a>
+      <a href="sports.html">رياضية</a>
+      <a href="documentary.html">وثائقية</a>
+      <a href="breaking.html">عاجلة</a>
     </div>
   </nav>
 
-  <div class="news-section" id="breaking-news">
-    
+  <div class="news-section" id="local-news">
+    <h2>الأخبار المحلية</h2>
 
     <div class="main-video-preview">
       <iframe
         id="mainVideo"
-        src="https://www.youtube.com/embed/Zi_XLOBDo_Y"
+        src="https://www.youtube.com/embed/TcMBFSGVi1c"
         allowfullscreen
-        title="خبر عاجل: تطورات الأحداث الراهنة"
+        title="تغطية شاملة للأحداث المحلية"
       ></iframe>
-      <h3 id="mainVideoTitle">خبر عاجل: تطورات الأحداث الراهنة</h3>
+      <h3 id="mainVideoTitle">تغطية شاملة للأحداث المحلية</h3>
     </div>
 
     <div class="video-news-list">
       <div
         class="news-item"
-        onclick="changeMainVideo('Zi_XLOBDo_Y', 'خبر عاجل: تطورات الأحداث الراهنة')"
+        onclick="changeMainVideo('TcMBFSGVi1c', 'تغطية شاملة للأحداث المحلية')"
       >
-        <img src="https://img.youtube.com/vi/Zi_XLOBDo_Y/hqdefault.jpg" alt="تطورات الأحداث" />
-        <h3>تطورات الأحداث</h3>
+        <img src="https://img.youtube.com/vi/TcMBFSGVi1c/hqdefault.jpg" alt="أحداث محلية" />
+        <h3>أحداث محلية</h3>
       </div>
       <div
         class="news-item"
-        onclick="changeMainVideo('QH2-TGUlwu4', 'عاجل: تحركات سياسية هامة')"
+        onclick="changeMainVideo('hY7m5jjJ9mM', 'التطورات في المشاريع الوطنية')"
       >
-        <img src="https://img.youtube.com/vi/QH2-TGUlwu4/hqdefault.jpg" alt="تحركات سياسية" />
-        <h3>تحركات سياسية</h3>
+        <img src="https://img.youtube.com/vi/hY7m5jjJ9mM/hqdefault.jpg" alt="مشاريع وطنية" />
+        <h3>مشاريع وطنية</h3>
       </div>
       <div
         class="news-item"
-        onclick="changeMainVideo('3tmd-ClpJxA', 'عاجل: أخبار الطوارئ')"
+        onclick="changeMainVideo('dQw4w9WgXcQ', 'الأمن والسلامة في المدن')"
       >
-        <img src="https://img.youtube.com/vi/3tmd-ClpJxA/hqdefault.jpg" alt="أخبار الطوارئ" />
-        <h3>أخبار الطوارئ</h3>
+        <img src="https://img.youtube.com/vi/dQw4w9WgXcQ/hqdefault.jpg" alt="الأمن والسلامة" />
+        <h3>الأمن والسلامة</h3>
       </div>
       <div
         class="news-item"
-        onclick="changeMainVideo('V-_O7nl0Ii0', 'تحديث عاجل من الميدان')"
+        onclick="changeMainVideo('tAGnKpE4NCI', 'التنمية الحضرية')"
       >
-        <img src="https://img.youtube.com/vi/V-_O7nl0Ii0/hqdefault.jpg" alt="تحديث عاجل" />
-        <h3>تحديث عاجل</h3>
+        <img src="https://img.youtube.com/vi/tAGnKpE4NCI/hqdefault.jpg" alt="التنمية الحضرية" />
+        <h3>التنمية الحضرية</h3>
       </div>
     </div>
   </div>

@@ -98,3 +98,50 @@
     font-size: 18px;
     color: #004080;
   }
+
+
+footer {
+  background-color: #004d99;
+  color: white;
+  padding: 30px 20px 15px;
+  font-size: 14px;
+  font-family: 'GE_SS_Two_Medium', Arial, sans-serif;
+  border-top-right-radius: 15px;
+    border-top-left-radius: 15px;
+}
+
+.footer-container {
+  display: flex;
+  max-width: 960px;
+  margin: 0 auto 0px 5px;
+  gap: 20px; /* المسافة بين الصناديق */
+  text-align: right;
+  justify-content: space-between;
+  
+}
+
+.footer-box {
+  flex: 1; /* ليأخذ كل صندوق مساحة متساوية */
+  display: flex;
+  flex-direction: column; /* المحتوى داخل الصندوق عمودي */
+  gap: 10px;
+}
+
+.social-icons {
+  display: flex;
+  gap: 12px; /* المسافة بين الصور */
+  justify-content: flex-start; /* أو center لو حابب */
+  align-items: center;
+}
+
+.social-icons img {
+  width: 24px; /* حجم أيقونة الصورة */
+  height: 24px;
+  object-fit: contain;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.social-icons img:hover {
+  transform: scale(1.1);
+}

@@ -3,71 +3,71 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>الجزيرة - الرئيسية</title>
-  <link rel="stylesheet" href="styles/style.css" />
+  <title>الجزيرة - وثائقية</title>
+  <link rel="stylesheet" href="../styles/style.css" />
 </head>
 <body>
   <nav class="navbar">
     <div class="navbar-top">
       <div class="logo-area">
-        <img src="images/logo.svg" alt="الجزيرة" class="site-logo" />
+        <img src="../images/logo.svg" alt="الجزيرة" class="site-logo" />
         <div class="site-name">الجزيرة</div>
       </div>
       <div class="nav-actions">
         <input type="search" class="search-box" placeholder="ابحث هنا..." />
-        <img src="images/account.png" alt="حساب" class="account-icon" onclick="window.location.href='pages/login.html'" />
+        <img src="../images/account.png" alt="حساب" class="account-icon" onclick="window.location.href='login.html'" />
       </div>
     </div>
     <div class="nav-links">
-      <a href="pages/local.html">محلية</a>
-      <a href="pages/economic.html">اقتصادية</a>
-      <a href="pages/sports.html">رياضية</a>
-      <a href="pages/documentary.html">وثائقية</a>
-      <a href="pages/breaking.html">عاجلة</a>
+      <a href="local.html">محلية</a>
+      <a href="economic.html">اقتصادية</a>
+      <a href="sports.html">رياضية</a>
+      <a href="documentary.html">وثائقية</a>
+      <a href="breaking.html">عاجلة</a>
     </div>
   </nav>
 
-  <div class="news-section" id="breaking-news">
-    
+  <div class="news-section" id="documentary-news">
+    <h2>الأخبار الوثائقية</h2>
 
     <div class="main-video-preview">
       <iframe
         id="mainVideo"
-        src="https://www.youtube.com/embed/Zi_XLOBDo_Y"
+        src="https://www.youtube.com/embed/5qap5aO4i9A"
         allowfullscreen
-        title="خبر عاجل: تطورات الأحداث الراهنة"
+        title="وثائقي عن البيئة"
       ></iframe>
-      <h3 id="mainVideoTitle">خبر عاجل: تطورات الأحداث الراهنة</h3>
+      <h3 id="mainVideoTitle">وثائقي عن البيئة</h3>
     </div>
 
     <div class="video-news-list">
       <div
         class="news-item"
-        onclick="changeMainVideo('Zi_XLOBDo_Y', 'خبر عاجل: تطورات الأحداث الراهنة')"
+        onclick="changeMainVideo('5qap5aO4i9A', 'وثائقي عن البيئة')"
       >
-        <img src="https://img.youtube.com/vi/Zi_XLOBDo_Y/hqdefault.jpg" alt="تطورات الأحداث" />
-        <h3>تطورات الأحداث</h3>
+        <img src="https://img.youtube.com/vi/5qap5aO4i9A/hqdefault.jpg" alt="وثائقي البيئة" />
+        <h3>وثائقي البيئة</h3>
       </div>
       <div
         class="news-item"
-        onclick="changeMainVideo('QH2-TGUlwu4', 'عاجل: تحركات سياسية هامة')"
+        onclick="changeMainVideo('M7lc1UVf-VE', 'وثائقي عن الحياة البرية')"
       >
-        <img src="https://img.youtube.com/vi/QH2-TGUlwu4/hqdefault.jpg" alt="تحركات سياسية" />
-        <h3>تحركات سياسية</h3>
+        <img src="https://img.youtube.com/vi/M7lc1UVf-VE/hqdefault.jpg" alt="وثائقي الحياة البرية" />
+        <h3>وثائقي الحياة البرية</h3>
       </div>
       <div
         class="news-item"
-        onclick="changeMainVideo('3tmd-ClpJxA', 'عاجل: أخبار الطوارئ')"
+        onclick="changeMainVideo('kXYiU_JCYtU', 'وثائقي عن الثقافة')"
       >
-        <img src="https://img.youtube.com/vi/3tmd-ClpJxA/hqdefault.jpg" alt="أخبار الطوارئ" />
-        <h3>أخبار الطوارئ</h3>
+        <img src="https://img.youtube.com/vi/kXYiU_JCYtU/hqdefault.jpg" alt="وثائقي الثقافة" />
+        <h3>وثائقي الثقافة</h3>
       </div>
       <div
         class="news-item"
-        onclick="changeMainVideo('V-_O7nl0Ii0', 'تحديث عاجل من الميدان')"
+        onclick="changeMainVideo('e-ORhEE9VVg', 'وثائقي عن التاريخ')"
       >
-        <img src="https://img.youtube.com/vi/V-_O7nl0Ii0/hqdefault.jpg" alt="تحديث عاجل" />
-        <h3>تحديث عاجل</h3>
+        <img src="https://img.youtube.com/vi/e-ORhEE9VVg/hqdefault.jpg" alt="وثائقي التاريخ" />
+        <h3>وثائقي التاريخ</h3>
       </div>
     </div>
   </div>
@@ -98,7 +98,7 @@
 
   <script>
     function changeMainVideo(videoId, title) {
-      const iframe = document.getElementById('mainVideo');
+const iframe = document.getElementById('mainVideo');
       const videoTitle = document.getElementById('mainVideoTitle');
 
       iframe.src = `https://www.youtube.com/embed/${videoId}?autoplay=1`;

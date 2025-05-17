@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>لوحة تحكم المسؤول</title>
+  <link rel="stylesheet" href="../styles/admin.css">
+</head>
+<body>
+
+<header>
+  <h1>لوحة تحكم المسؤول</h1>
+  <div>
+    <button id="previewBtn">معاينة الصفحة الرئيسية</button>
+    <button id="logoutBtn">تسجيل الخروج</button>
+  </div>
+</header>
+
+<main>
+  <section>
+    <h2>إضافة قسم جديد</h2>
+    <div id="sectionNotification" class="notification"></div>
+    <form id="addSectionForm">
+      <label for="newSectionName">اسم القسم</label>
+      <input type="text" id="newSectionName" placeholder="أدخل اسم القسم الجديد" required />
+      <button type="submit" class="submit-btn">إضافة القسم</button>
+    </form>
+  </section>
+
+  <section>
+    <h2>إضافة خبر جديد</h2>
+    <div id="newsNotification" class="notification"></div>
+    <form id="addNewsForm">
+      <label for="newsTitle">عنوان الخبر</label>
+      <input type="text" id="newsTitle" placeholder="أدخل عنوان الخبر" required />
+      
+      <label for="newsCategory">اختر القسم</label>
+      <select id="newsCategory" required></select>
+      
+      <label for="newsVideoURL">رابط الفيديو (اختياري)</label>
+      <input type="url" id="newsVideoURL" placeholder="أدخل رابط الفيديو من يوتيوب" />
+      
+      <label for="newsContent">محتوى الخبر</label>
+      <textarea id="newsContent" rows="4" placeholder="أدخل نص الخبر" required></textarea>
+      
+      <button type="submit" class="submit-btn">إضافة الخبر</button>
+    </form>
+  </section>
+</main>
+ <script src="../script/admin.js"></script>
+
+</body>
+</html>
