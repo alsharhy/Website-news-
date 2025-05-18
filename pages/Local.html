@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ar" >
+<html lang="ar">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -15,11 +15,11 @@
       </div>
       <div class="nav-actions">
         <input type="search" class="search-box" placeholder="ابحث هنا..." />
-        <img src="../images/account.png" alt="حساب" class="account-icon" onclick="window.location.href='login.html'" />
+        <img src="../images/account.png" alt="حساب" class="account-icon" onclick="window.location.href='register.html'" />
       </div>
     </div>
     <div class="nav-links">
-      <a href="#">محلية</a>
+      <a href="local.html">محلية</a>
       <a href="economic.html">اقتصادية</a>
       <a href="sports.html">رياضية</a>
       <a href="documentary.html">وثائقية</a>
@@ -31,43 +31,29 @@
     <h2>الأخبار المحلية</h2>
 
     <div class="main-video-preview">
-      <iframe
-        id="mainVideo"
-        src="https://www.youtube.com/embed/TcMBFSGVi1c"
-        allowfullscreen
-        title="تغطية شاملة للأحداث المحلية"
-      ></iframe>
-      <h3 id="mainVideoTitle">تغطية شاملة للأحداث المحلية</h3>
+      <video id="mainVideo" controls autoplay>
+        <source src="../media/1.mp4" type="video/mp4" />
+        متصفحك لا يدعم تشغيل الفيديو.
+      </video>
+      <h3 id="mainVideoTitle">مشاريع تطوير البنية التحتية</h3>
     </div>
 
     <div class="video-news-list">
-      <div
-        class="news-item"
-        onclick="changeMainVideo('TcMBFSGVi1c', 'تغطية شاملة للأحداث المحلية')"
-      >
-        <img src="https://img.youtube.com/vi/TcMBFSGVi1c/hqdefault.jpg" alt="أحداث محلية" />
-        <h3>أحداث محلية</h3>
+      <div class="news-item" onclick="changeMainVideo('../media/2.mp4', 'مشاريع جديدة في المدينة')">
+        <img src="images/thumb5.jpg" alt="مشاريع المدينة" />
+        <h3>مشاريع جديدة في المدينة</h3>
       </div>
-      <div
-        class="news-item"
-        onclick="changeMainVideo('hY7m5jjJ9mM', 'التطورات في المشاريع الوطنية')"
-      >
-        <img src="https://img.youtube.com/vi/hY7m5jjJ9mM/hqdefault.jpg" alt="مشاريع وطنية" />
-        <h3>مشاريع وطنية</h3>
+      <div class="news-item" onclick="changeMainVideo('../media/3.mp4', 'حملة نظافة كبرى')">
+        <img src="images/thumb6.jpg" alt="حملة النظافة" />
+        <h3>حملة نظافة كبرى</h3>
       </div>
-      <div
-        class="news-item"
-        onclick="changeMainVideo('dQw4w9WgXcQ', 'الأمن والسلامة في المدن')"
-      >
-        <img src="https://img.youtube.com/vi/dQw4w9WgXcQ/hqdefault.jpg" alt="الأمن والسلامة" />
-        <h3>الأمن والسلامة</h3>
+      <div class="news-item" onclick="changeMainVideo('../media/4.mp4', 'افتتاح مدارس جديدة')">
+        <img src="images/thumb7.jpg" alt="مدارس جديدة" />
+        <h3>افتتاح مدارس جديدة</h3>
       </div>
-      <div
-        class="news-item"
-        onclick="changeMainVideo('tAGnKpE4NCI', 'التنمية الحضرية')"
-      >
-        <img src="https://img.youtube.com/vi/tAGnKpE4NCI/hqdefault.jpg" alt="التنمية الحضرية" />
-        <h3>التنمية الحضرية</h3>
+      <div class="news-item" onclick="changeMainVideo('../media/5.mp4', 'تحسينات في المرافق العامة')">
+        <img src="images/thumb8.jpg" alt="تحسينات مرافق" />
+        <h3>تحسينات في المرافق العامة</h3>
       </div>
     </div>
   </div>
@@ -97,11 +83,14 @@
   </footer>
 
   <script>
-    function changeMainVideo(videoId, title) {
-      const iframe = document.getElementById('mainVideo');
+    function changeMainVideo(videoPath, title) {
+      const video = document.getElementById('mainVideo');
       const videoTitle = document.getElementById('mainVideoTitle');
 
-      iframe.src = `https://www.youtube.com/embed/${videoId}?autoplay=1`;
+      video.pause();
+      video.querySelector('source').src = videoPath;
+      video.load();
+      video.play();
       videoTitle.textContent = title;
     }
   </script>

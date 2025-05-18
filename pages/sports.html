@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ar" >
+<html lang="ar">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -15,7 +15,7 @@
       </div>
       <div class="nav-actions">
         <input type="search" class="search-box" placeholder="ابحث هنا..." />
-        <img src="../images/account.png" alt="حساب" class="account-icon" onclick="window.location.href='login.html'" />
+        <img src="../images/account.png" alt="حساب" class="account-icon" onclick="window.location.href='register.html'" />
       </div>
     </div>
     <div class="nav-links">
@@ -31,42 +31,28 @@
     <h2>الأخبار الرياضية</h2>
 
     <div class="main-video-preview">
-      <iframe
-        id="mainVideo"
-        src="https://www.youtube.com/embed/L3wKzyIN1yk"
-        allowfullscreen
-        title="ملخص أهم المباريات"
-      ></iframe>
+      <video id="mainVideo" controls autoplay>
+        <source src="../media/1.mp4" type="video/mp4" />
+        متصفحك لا يدعم تشغيل الفيديو.
+      </video>
       <h3 id="mainVideoTitle">ملخص أهم المباريات</h3>
     </div>
 
     <div class="video-news-list">
-      <div
-        class="news-item"
-        onclick="changeMainVideo('L3wKzyIN1yk', 'ملخص أهم المباريات')"
-      >
-        <img src="https://img.youtube.com/vi/L3wKzyIN1yk/hqdefault.jpg" alt="ملخص المباريات" />
+      <div class="news-item" onclick="changeMainVideo('../media/2.mp4', 'ملخص أهم المباريات')">
+        <img src="images/thumb1.jpg" alt="ملخص المباريات" />
         <h3>ملخص المباريات</h3>
       </div>
-      <div
-        class="news-item"
-        onclick="changeMainVideo('QwZT7T-TXT0', 'تقرير عن البطولة العالمية')"
-      >
-        <img src="https://img.youtube.com/vi/QwZT7T-TXT0/hqdefault.jpg" alt="البطولة العالمية" />
+      <div class="news-item" onclick="changeMainVideo('../media/3.mp4', 'تقرير عن البطولة العالمية')">
+        <img src="images/thumb2.jpg" alt="البطولة العالمية" />
         <h3>البطولة العالمية</h3>
       </div>
-      <div
-        class="news-item"
-        onclick="changeMainVideo('hY7m5jjJ9mM', 'أخبار اللاعبين')"
-      >
-        <img src="https://img.youtube.com/vi/hY7m5jjJ9mM/hqdefault.jpg" alt="أخبار اللاعبين" />
+      <div class="news-item" onclick="changeMainVideo('../media/3.mp4', 'أخبار اللاعبين')">
+        <img src="images/thumb3.jpg" alt="أخبار اللاعبين" />
         <h3>أخبار اللاعبين</h3>
       </div>
-      <div
-        class="news-item"
-        onclick="changeMainVideo('dQw4w9WgXcQ', 'تحديثات المباريات')"
-      >
-        <img src="https://img.youtube.com/vi/dQw4w9WgXcQ/hqdefault.jpg" alt="تحديثات المباريات" />
+      <div class="news-item" onclick="changeMainVideo('../media/4.mp4', 'تحديثات المباريات')">
+        <img src="images/thumb4.jpg" alt="تحديثات المباريات" />
         <h3>تحديثات المباريات</h3>
       </div>
     </div>
@@ -97,11 +83,14 @@
   </footer>
 
   <script>
-    function changeMainVideo(videoId, title) {
-      const iframe = document.getElementById('mainVideo');
+    function changeMainVideo(videoPath, title) {
+      const video = document.getElementById('mainVideo');
       const videoTitle = document.getElementById('mainVideoTitle');
 
-      iframe.src = `https://www.youtube.com/embed/${videoId}?autoplay=1`;
+      video.pause(); // إيقاف التشغيل السابق
+      video.querySelector('source').src = videoPath;
+      video.load(); // تحميل الفيديو الجديد
+      video.play(); // تشغيل الفيديو الجديد
       videoTitle.textContent = title;
     }
   </script>

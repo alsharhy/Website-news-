@@ -1,208 +1,247 @@
+/* تعريف خط مخصص باسم 'GE_SS_Two_Medium' مع مصدر الخط */
 @font-face {
   font-family: 'GE_SS_Two_Medium';
   src: url('../fonts/GE_SS_Two_Medium.otf.ttf');
 }
 
+/* إزالة الهوامش والحشوات لجميع العناصر، وتحديد طريقة حساب الأحجام، وتعيين الخط الافتراضي */
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
-  font-family: 'GE_SS_Two_Medium';
+  box-sizing: border-box; /* يشمل البادينج والحدود ضمن أبعاد العنصر */
+  font-family: 'GE_SS_Two_Medium'; /* تعيين الخط المخصص لكل الصفحة */
 }
 
+/* تنسيق جسم الصفحة */
 body {
-  direction: rtl;
-  background-color: #f9f9f9;
-  color: #222;
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
+  direction: rtl; /* اتجاه النص من اليمين إلى اليسار */
+  background-color: #f9f9f9; /* لون خلفية فاتح */
+  color: #222; /* لون نص داكن */
+  display: flex; /* استخدام فليكس بوكس لترتيب المحتوى */
+  flex-direction: column; /* ترتيب العناصر عمودياً */
+  min-height: 100vh; /* جعل ارتفاع الجسم يملأ كامل شاشة العرض */
 }
 
+/* شريط التنقل العلوي */
 .navbar {
-  background-color: #004080;
-  padding: 15px 30px;
-  color: white;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-  border-bottom-left-radius: 20px;
-  border-bottom-right-radius: 20px;
-  position: fixed;
-  top: 0;
-  width: 100%;
-  z-index: 999;
+  background-color: #004080; /* لون الخلفية أزرق داكن */
+  padding: 10px 30px; /* مساحة داخلية من الأعلى والأسفل 10 بكسل، ومن اليمين واليسار 30 بكسل */
+  color: white; /* لون النص أبيض */
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* ظل خفيف تحت الشريط */
+  border-bottom-left-radius: 20px; /* تقويس الزاوية السفلية اليسرى */
+  border-bottom-right-radius: 20px; /* تقويس الزاوية السفلية اليمنى */
+  position: fixed; /* تثبيت الشريط في الأعلى حتى عند التمرير */
+  top: 0; /* تحديد موضع الشريط عند الأعلى */
+  width: 100%; /* ملء العرض كامل */
+  z-index: 999; /* وضع الشريط فوق باقي العناصر */
 }
 
+/* التنسيق الداخلي لشريط التنقل */
 .navbar-top {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  display: flex; /* استخدام فليكس لترتيب العناصر أفقياً */
+  justify-content: space-between; /* توزيع العناصر بحيث يكون بينها مسافات متساوية */
+  align-items: center; /* محاذاة العناصر عمودياً في المنتصف */
 }
 
+/* منطقة الشعار */
 .logo-area {
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  flex-direction: column; /* ترتيب العناصر رأسياً */
+  align-items: center; /* محاذاة العناصر في المنتصف أفقياً */
 }
 
+/* صورة الشعار */
 .site-logo {
-  width: 50px;
-  height: 50px;
+  width: 70px; /* عرض 70 بكسل */
+  height: 70px; /* ارتفاع 70 بكسل */
 }
 
+/* اسم الموقع بجانب الشعار */
 .site-name {
-  font-size: 18px;
-  font-weight: bold;
-  margin-top: 5px;
+  font-size: 18px; /* حجم الخط */
+  font-weight: bold; /* خط عريض */
+  margin-top: 5px; /* مسافة فوق العنصر */
 }
 
+/* مجموعة أزرار أو روابط إجراءات التنقل */
 .nav-actions {
   display: flex;
-  align-items: center;
-  gap: 10px;
+  align-items: center; /* محاذاة عمودية */
+  gap: 10px; /* مسافة بين العناصر */
+  
+  
 }
 
+/* صندوق البحث */
 .search-box {
-  padding: 5px 10px;
-  border-radius: 5px;
-  border: none;
-  width: 160px;
+  padding: 5px 10px; /* حشوة داخلية */
+  border-radius: 5px; /* حواف مدورة */
+  border: none; /* بدون حدود */
+  width: 190px; /* عرض محدد */
 }
 
+/* أيقونة الحساب */
 .account-icon {
-  width: 30px;
-  height: 30px;
-  cursor: pointer;
+  width: 40px; /* عرض */
+  height: 40px; /* ارتفاع */
+  cursor: pointer; /* شكل المؤشر عند المرور على العنصر */
 }
 
+/* روابط التنقل تحت الشريط */
 .nav-links {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 15px;
-  margin-top: 10px;
+  display: flex; /* ترتيب أفقي */
+  justify-content: center; /* محاذاة في المنتصف */
+  flex-wrap: wrap; /* التفاف الروابط عند ضيق الشاشة */
+  gap: 15px; /* مسافة بين الروابط */
+  margin-top: 10px; /* مسافة من الأعلى */
 }
 
+/* تنسيق روابط التنقل */
 .nav-links a {
-  margin: 0 10px;
-  color: #ffffff;
-  text-decoration: none;
-  font-weight: bold;
-  transition: color 0.3s;
+  margin: 0 10px; /* مسافة أفقية بين الروابط */
+  color: #ffffff; /* لون أبيض */
+  text-decoration: none; /* إزالة التسطير */
+  font-weight: bold; /* خط عريض */
+  transition: color 0.3s; /* انتقال ناعم لتغيير اللون */
 }
 
+.nav-links a:active {
+  transform: scale(0.95); /* انكماش بسيط عند الضغط */
+  text-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); /* ظل خفيف */
+}
+
+/* تغير لون الرابط عند المرور عليه */
 .nav-links a:hover {
-  color: #ffcc00;
+  color: #ffcc00; /* أصفر */
 }
 
+/* قسم الأخبار الرئيسي */
 .news-section {
-  margin-top: 140px;
-  padding: 0 20px 100px;
+  margin-top: 140px; /* مسافة من الأعلى (تعويض عن شريط التنقل المثبت) */
+  padding: 0 20px 100px; /* حشوة من اليمين واليسار والأسفل */
 }
 
-.main-video-preview {
-  position: relative;
-  width: 100%;
-  padding-bottom: 56.25%; /* نسبة 16:9 */
-  height: 0;
-  overflow: hidden;
-  background-color: #fff;
-  border-radius: 10px;
-  margin-bottom: 20px;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-}
+/* عرض الفيديو الرئيسي */
 
-.main-video-preview iframe {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  border-radius: 10px;
-  border: none;
-}
 
+/* عنوان الفيديو الرئيسي */
 .main-video-preview h3 {
   margin-top: 10px;
   font-size: 20px;
-  color: #004080;
+  color: gold; /* أزرق */
 }
 
+/* قائمة أخبار الفيديو */
 .video-news-list {
   display: flex;
-  flex-direction: column;
-  gap: 15px;
+  flex-direction: column; /* ترتيب عمودي */
+  gap: 10px; /* مسافة بين الأخبار */
 }
 
+/* كل خبر */
 .news-item {
-  display: flex;
-  align-items: center;
-  gap: 15px;
-  background-color: #fff;
-  padding: 10px;
-  border-radius: 10px;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-  cursor: pointer;
-  transition: background-color 0.3s;
+  display: flex; /* ترتيب أفقي */
+  align-items: center; /* محاذاة عمودية */
+  gap: 15px; /* مسافة بين صورة الخبر والنص */
+  background-color: #fff; /* خلفية بيضاء */
+  padding: 10px; /* حشوة داخلية */
+  border-radius: 10px; /* تقويس الحواف */
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* ظل */
+  cursor: pointer; /* المؤشر يتغير عند المرور */
+  transition: background-color 0.3s; /* انتقال ناعم لتغيير الخلفية */
 }
 
+/* تغير لون خلفية الخبر عند المرور */
 .news-item:hover {
-  background-color: #e6f0ff;
+  background-color: #e6f0ff; /* لون أزرق فاتح */
 }
 
+/* صورة الخبر */
 .news-item img {
   width: 160px;
   height: 90px; /* للحفاظ على نسبة 16:9 */
   border-radius: 10px;
-  object-fit: cover;
-  pointer-events: none;
+  object-fit: cover; /* ملء الصورة دون تشويه */
+  pointer-events: none; /* منع التفاعل مع الصورة */
 }
 
+/* عنوان الخبر */
 .news-item h3 {
   font-size: 16px;
-  color: #004080;
+  color: #004080; /* أزرق */
 }
 
+/* عرض الفيديو الرئيسي */
+.main-video-preview {
+  position: relative;
+  width: 100%;
+  max-width: 800px;
+  aspect-ratio: 16 / 9;
+  margin: auto;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  overflow: hidden;
+  margin-bottom: 20px;
+}
+/* عنصر الفيديو داخل العنصر الرئيسي */
+.main-video-preview video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* تغطية العنصر مع الحفاظ على النسبة */
+  border-radius: 10px; /* نفس تقويس الحواف */
+  display: block; /* منع المساحات البيضاء تحت الفيديو */
+  border: none;
+}
+    
+    
+/* تذييل الصفحة */
 footer {
-  flex-shrink: 0;
-  background-color: #004d99;
-  color: white;
-  padding: 30px 20px 15px;
+  flex-shrink: 0; /* لا ينكمش */
+  background-color: #004d99; /* لون أزرق غامق */
+  color: white; /* لون النص أبيض */
+  padding: 30px 20px 15px; /* حشوة داخلية */
   font-size: 14px;
-  font-family: 'GE_SS_Two_Medium', Arial, sans-serif;
-  border-top-right-radius: 15px;
+  font-family: 'GE_SS_Two_Medium', Arial, sans-serif; /* الخط */
+  border-top-right-radius: 15px; /* تقويس الزوايا العلوية */
   border-top-left-radius: 15px;
 }
 
+/* محتوى التذييل */
 .footer-container {
-  display: flex;
-  max-width: 960px;
-  margin: auto;
-  gap: 20px;
-  justify-content: space-between;
-  flex-wrap: wrap;
+  display: flex; /* ترتيب أفقي */
+  max-width: 960px; /* أقصى عرض */
+  margin: auto; /* توسيط المحتوى */
+  gap: 20px; /* مسافة بين الصناديق */
+  justify-content: space-between; /* توزيع الصناديق */
+  flex-wrap: wrap; /* التفاف للصناديق عند ضيق الشاشة */
 }
 
+/* كل صندوق في التذييل */
 .footer-box {
-  flex: 1;
+  flex: 1; /* كل صندوق يأخذ مساحة متساوية */
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 10px; /* مسافة بين العناصر داخل الصندوق */
 }
 
+/* أيقونات وسائل التواصل */
 .social-icons {
   display: flex;
   gap: 12px;
   align-items: center;
 }
 
+/* حجم الأيقونات */
 .social-icons img {
   width: 24px;
   height: 24px;
   object-fit: contain;
-  cursor: pointer;
-  transition: transform 0.3s ease;
+  cursor: pointer; /* مؤشر اليد عند المرور */
+  transition: transform 0.3s ease; /* حركة ناعمة عند التأثير */
 }
 
+/* تكبير الأيقونات عند المرور */
 .social-icons img:hover {
   transform: scale(1.1);
 }

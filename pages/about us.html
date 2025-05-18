@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>about Us</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"/>
+</head>
+<style>
+    @font-face {
+  font-family: 'GE_SS_Two_Medium';
+  src: url('../fonts/GE_SS_Two_Medium.otf.ttf');
+}
+    body {
+    font-family: 'GE_SS_Two_Medium';
+    text-align: center;    
+    background-color: #f9f9ff;
+}
+
+.swiper {
+    width: 80%;
+    margin: auto;
+    padding: 20px;
+}
+
+.swiper-slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.testimonial {
+    background: gold;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    width: 200px;
+    height:350px;
+    text-align: center;
+    margin-top: 50%; 
+}
+
+.testimonial img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+}
+
+h3 {
+    color: #333;
+    margin: 5px 0;
+}
+
+.role {
+    color: gray;
+    font-size: 14px;
+}
+
+.stars {
+    color: red;
+    font-size: 20px;
+    margin: 10px 0;
+}
+
+.quote {
+    font-style: italic;
+    color: #666;
+}
+
+/* تحديد النقاط السفلية */
+.swiper-pagination-bullet-active {
+    background-color: blue !important;
+}
+
+
+
+
+
+    
+</style>
+<body>
+
+    <div class="swiper mySwiper">
+        <div class="swiper-wrapper">
+
+      
+
+            <!-- الشخص الثاني -->
+            <div class="swiper-slide">
+                <div class="testimonial">
+                    <img src="../images/about us.jpg" alt="Sarah Doe">
+                    <h3>Hacktor and Altoba'a</h3>
+                    <p class="role">Marketing Expert</p>
+                    <div class="stars">★★★★☆</div>
+                    <p class="quote">Design By Hacktor and Altoba'a</p>
+                    <p>تصميم وتطوير محمد التبعي وضيف الله الشارحي </p>
+                </div>
+            </div>
+            
+      
+          
+            
+
+            <!-- يمكنك إضافة المزيد من الأشخاص هنا -->
+
+        </div>
+        
+        <!-- أزرار التنقل -->
+        <div class="swiper-pagination"></div>
+    </div>
+    
+
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+    <script src="script.js"></script>
+
+</body>
+</html>

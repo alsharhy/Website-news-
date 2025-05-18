@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <title>مثال بحث بسيط</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+      background-color: #f4f4f4;
+    }
+
+    .search-box {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 20px;
+      font-size: 16px;
+    }
+
+    .item {
+      background-color: #fff;
+      margin-bottom: 10px;
+      padding: 15px;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+  </style>
+</head>
+<body>
+
+  <input type="text" id="searchInput" class="search-box" placeholder="ابحث عن كلمة...">
+
+  <div class="item">الخبر الرياضي الأول</div>
+  <div class="item">الخبر الاقتصادي الثاني</div>
+  <div class="item">الخبر المحلي الثالث</div>
+  <div class="item">الخبر العالمي الرابع</div>
+
+  <script>
+    const searchInput = document.getElementById('searchInput');
+
+    searchInput.addEventListener('input', function () {
+      const searchText = this.value.toLowerCase();
+      const items = document.querySelectorAll('.item');
+
+      items.forEach(item => {
+        const text = item.textContent.toLowerCase();
+        if (text.includes(searchText)) {
+          item.style.display = 'block';
+        } else {
+          item.style.display = 'none';
+        }
+      });
+    });
+  </script>
+
+</body>
+</html>

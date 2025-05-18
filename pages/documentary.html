@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ar" >
+<html lang="ar">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -15,7 +15,7 @@
       </div>
       <div class="nav-actions">
         <input type="search" class="search-box" placeholder="ابحث هنا..." />
-        <img src="../images/account.png" alt="حساب" class="account-icon" onclick="window.location.href='login.html'" />
+        <img src="../images/account.png" alt="حساب" class="account-icon" onclick="window.location.href='register.html'" />
       </div>
     </div>
     <div class="nav-links">
@@ -28,46 +28,32 @@
   </nav>
 
   <div class="news-section" id="documentary-news">
-    <h2>الأخبار الوثائقية</h2>
+    <h2>البرامج الوثائقية</h2>
 
     <div class="main-video-preview">
-      <iframe
-        id="mainVideo"
-        src="https://www.youtube.com/embed/5qap5aO4i9A"
-        allowfullscreen
-        title="وثائقي عن البيئة"
-      ></iframe>
+      <video id="mainVideo" controls autoplay>
+        <source src="../media/1.mp4" type="video/mp4" />
+        متصفحك لا يدعم تشغيل الفيديو.
+      </video>
       <h3 id="mainVideoTitle">وثائقي عن البيئة</h3>
     </div>
 
     <div class="video-news-list">
-      <div
-        class="news-item"
-        onclick="changeMainVideo('5qap5aO4i9A', 'وثائقي عن البيئة')"
-      >
-        <img src="https://img.youtube.com/vi/5qap5aO4i9A/hqdefault.jpg" alt="وثائقي البيئة" />
-        <h3>وثائقي البيئة</h3>
+      <div class="news-item" onclick="changeMainVideo('../media/2.mp4', 'تاريخ الحضارات القديمة')">
+        <img src="images/thumb5.jpg" alt="الحضارات" />
+        <h3>الحضارات القديمة</h3>
       </div>
-      <div
-        class="news-item"
-        onclick="changeMainVideo('M7lc1UVf-VE', 'وثائقي عن الحياة البرية')"
-      >
-        <img src="https://img.youtube.com/vi/M7lc1UVf-VE/hqdefault.jpg" alt="وثائقي الحياة البرية" />
-        <h3>وثائقي الحياة البرية</h3>
+      <div class="news-item" onclick="changeMainVideo('../media/3.mp4', 'كوكب الأرض عن قرب')">
+        <img src="images/thumb6.jpg" alt="كوكب الأرض" />
+        <h3>كوكب الأرض</h3>
       </div>
-      <div
-        class="news-item"
-        onclick="changeMainVideo('kXYiU_JCYtU', 'وثائقي عن الثقافة')"
-      >
-        <img src="https://img.youtube.com/vi/kXYiU_JCYtU/hqdefault.jpg" alt="وثائقي الثقافة" />
-        <h3>وثائقي الثقافة</h3>
+      <div class="news-item" onclick="changeMainVideo('../media/4.mp4', 'الذكاء الاصطناعي والإنسان')">
+        <img src="images/thumb7.jpg" alt="الذكاء الاصطناعي" />
+        <h3>الذكاء الاصطناعي</h3>
       </div>
-      <div
-        class="news-item"
-        onclick="changeMainVideo('e-ORhEE9VVg', 'وثائقي عن التاريخ')"
-      >
-        <img src="https://img.youtube.com/vi/e-ORhEE9VVg/hqdefault.jpg" alt="وثائقي التاريخ" />
-        <h3>وثائقي التاريخ</h3>
+      <div class="news-item" onclick="changeMainVideo('../media/5.mp4', 'رحلة في أعماق البحار')">
+        <img src="images/thumb8.jpg" alt="أعماق البحار" />
+        <h3>أعماق البحار</h3>
       </div>
     </div>
   </div>
@@ -97,11 +83,14 @@
   </footer>
 
   <script>
-    function changeMainVideo(videoId, title) {
-const iframe = document.getElementById('mainVideo');
+    function changeMainVideo(videoPath, title) {
+      const video = document.getElementById('mainVideo');
       const videoTitle = document.getElementById('mainVideoTitle');
 
-      iframe.src = `https://www.youtube.com/embed/${videoId}?autoplay=1`;
+      video.pause();
+      video.querySelector('source').src = videoPath;
+      video.load();
+      video.play();
       videoTitle.textContent = title;
     }
   </script>

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ar" >
+<html lang="ar">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -15,7 +15,7 @@
       </div>
       <div class="nav-actions">
         <input type="search" class="search-box" placeholder="ابحث هنا..." />
-        <img src="../images/account.png" alt="حساب" class="account-icon" onclick="window.location.href='login.html'" />
+        <img src="../images/account.png" alt="حساب" class="account-icon" onclick="window.location.href='register.html'" />
       </div>
     </div>
     <div class="nav-links">
@@ -31,43 +31,29 @@
     <h2>الأخبار العاجلة</h2>
 
     <div class="main-video-preview">
-      <iframe
-        id="mainVideo"
-        src="https://www.youtube.com/embed/Zi_XLOBDo_Y"
-        allowfullscreen
-        title="خبر عاجل: تطورات الأحداث الراهنة"
-      ></iframe>
-      <h3 id="mainVideoTitle">خبر عاجل: تطورات الأحداث الراهنة</h3>
+      <video id="mainVideo" controls autoplay>
+        <source src="../media/1.mp4" type="video/mp4" />
+        متصفحك لا يدعم تشغيل الفيديو.
+      </video>
+      <h3 id="mainVideoTitle">عاجل: تطورات ميدانية ساخنة</h3>
     </div>
 
     <div class="video-news-list">
-      <div
-        class="news-item"
-        onclick="changeMainVideo('Zi_XLOBDo_Y', 'خبر عاجل: تطورات الأحداث الراهنة')"
-      >
-        <img src="https://img.youtube.com/vi/Zi_XLOBDo_Y/hqdefault.jpg" alt="تطورات الأحداث" />
-        <h3>تطورات الأحداث</h3>
+      <div class="news-item" onclick="changeMainVideo('../media/2.mp4', 'انفجار يهز العاصمة')">
+        <img src="images/thumb9.jpg" alt="انفجار العاصمة" />
+        <h3>انفجار يهز العاصمة</h3>
       </div>
-      <div
-        class="news-item"
-        onclick="changeMainVideo('QH2-TGUlwu4', 'عاجل: تحركات سياسية هامة')"
-      >
-        <img src="https://img.youtube.com/vi/QH2-TGUlwu4/hqdefault.jpg" alt="تحركات سياسية" />
-        <h3>تحركات سياسية</h3>
+      <div class="news-item" onclick="changeMainVideo('../media/3.mp4', 'بيان عاجل من الحكومة')">
+        <img src="images/thumb10.jpg" alt="بيان الحكومة" />
+        <h3>بيان من الحكومة</h3>
       </div>
-      <div
-        class="news-item"
-        onclick="changeMainVideo('3tmd-ClpJxA', 'عاجل: أخبار الطوارئ')"
-      >
-        <img src="https://img.youtube.com/vi/3tmd-ClpJxA/hqdefault.jpg" alt="أخبار الطوارئ" />
-        <h3>أخبار الطوارئ</h3>
+      <div class="news-item" onclick="changeMainVideo('../media/4.mp4', 'حالة الطوارئ تعلن')">
+        <img src="images/thumb11.jpg" alt="الطوارئ" />
+        <h3>إعلان الطوارئ</h3>
       </div>
-      <div
-        class="news-item"
-        onclick="changeMainVideo('V-_O7nl0Ii0', 'تحديث عاجل من الميدان')"
-      >
-        <img src="https://img.youtube.com/vi/V-_O7nl0Ii0/hqdefault.jpg" alt="تحديث عاجل" />
-        <h3>تحديث عاجل</h3>
+      <div class="news-item" onclick="changeMainVideo('../media/5.mp4', 'أحداث مفاجئة في المنطقة')">
+        <img src="images/thumb12.jpg" alt="أحداث مفاجئة" />
+        <h3>أحداث مفاجئة</h3>
       </div>
     </div>
   </div>
@@ -97,11 +83,14 @@
   </footer>
 
   <script>
-    function changeMainVideo(videoId, title) {
-      const iframe = document.getElementById('mainVideo');
+    function changeMainVideo(videoPath, title) {
+      const video = document.getElementById('mainVideo');
       const videoTitle = document.getElementById('mainVideoTitle');
 
-      iframe.src = `https://www.youtube.com/embed/${videoId}?autoplay=1`;
+      video.pause();
+      video.querySelector('source').src = videoPath;
+      video.load();
+      video.play();
       videoTitle.textContent = title;
     }
   </script>
